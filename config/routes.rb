@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :people
+  map.resources :people, :collection => { :fake => :get, :create_fake => :post }
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -1,0 +1,16 @@
+<h1>Generate some fake data</h1>
+
+<%= error_messages_for :person %>
+
+<% form_tag create_fake_people_path do -%>
+  <p>
+    <b>Number of people</b><br />
+    <%= text_field_tag :count %>
+  </p>
+
+  <p>
+    <%= submit_tag "Generate" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', people_path %>

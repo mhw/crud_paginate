@@ -54,6 +54,16 @@ class PeopleController < ApplicationController
     end
   end
 
+  # POST /people/create_fake
+  def create_fake
+    count = params[:count].to_i
+    count.times do
+      Person.fake.save
+    end
+    flash[:notice] = "Generated #{count} new people."
+    redirect_to people_path
+  end
+
   # PUT /people/1
   # PUT /people/1.xml
   def update
